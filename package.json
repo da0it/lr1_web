@@ -1,0 +1,23 @@
+{
+  "name": "server_app",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/da0it/lr1_web#readme",
+  "bugs": {
+    "url": "https://github.com/da0it/lr1_web/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/da0it/lr1_web.git"
+  },
+  "license": "ISC",
+  "author": "da0it",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

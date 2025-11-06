@@ -15,8 +15,12 @@ app.post('/calculate', (req, res) => {
   const b = parseFloat(num2);
   let result;
 
+  if (num1 === '' || num2 === '') {
+    return res.status(400).json({ error: 'Please enter two numbers' });
+  }
+
   if (isNaN(a) || isNaN(b)) {
-    return res.status(400).json({ error: 'Некорректные числа' });
+    return res.status(400).json({ error: 'Incorrect numbers' });
   }
 
   switch (operation) {
@@ -30,18 +34,13 @@ app.post('/calculate', (req, res) => {
       result = a * b;
       break;
     case '/':
-      result = b !== 0 ? a / b : 'Деление на ноль!';
+      result = b !== 0 ? a / b : 'Division by zero!';
       break;
     default:
-      return res.status(400).json({ error: 'Неизвестная операция' });
+      return res.status(400).json({ error: 'Unknown operation' });
   }
 
    res.json({ result });
-});
-
-app.get("/", function(request, response){
-
-    response.send("<h2>Привет Express!</h2>");
 });
 
 app.listen(port);
